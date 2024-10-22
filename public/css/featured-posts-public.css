@@ -77,6 +77,7 @@
 
 .all-post-item:nth-child(odd) .post-content {
      float: right;
+     width: 70%;
 }
 
 .all-post-item:nth-child(odd) .post-img {
@@ -93,6 +94,7 @@
 
 .post-content {
      padding: 20px;
+     width: 70%;
 }
 
 .post-img img {
@@ -119,6 +121,10 @@
      {
           width: 80%;
      }
+
+     .all-post-item:nth-child(odd) .post-content {
+          width: 60%;
+     }
 }
 
 @media screen and (max-width: 1040px) {
@@ -132,6 +138,10 @@
   .featured-post-item article
      {
           width: 70%;
+     }
+
+     .all-post-item:nth-child(odd) .post-content {
+          width: 50%;
      }
 }
 
@@ -150,11 +160,12 @@
      }
      
      .all-post-item:nth-child(odd) .post-content {
-          float: none;
+          float: left;
+          width: 100%;
      }
      
      .all-post-item:nth-child(odd) .post-img {
-          float: none;
+          float: right;
      }
 
      .featured-post-item article {
