@@ -1,0 +1,86 @@
+/**
+ * All of the CSS for your public-facing functionality should be
+ * included in this file.
+ */
+  .posts-template-container {
+      padding: 20px;
+      margin: 0 auto;
+      max-width: 1200px;
+      display: block;
+  }
+
+  .featured-posts-row {
+      width: 100%;
+  }
+
+
+  .featured-post-item {
+    width: 48%;
+    padding-right: 40px;
+    padding-left: 40px;
+    float: left;
+    box-sizing: border-box;
+    margin: 10px;
+    text-align: center;
+    color: #fff;
+    height: 500px;
+  }
+  .featured-post-item h2 a
+  {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .featured-post-item.full {
+      width: 100%;
+  }
+  .read-more-content a
+  {
+    padding: 10px;
+    background-color: red;
+    margin-top: 20px;
+    display: inline-block;
+    width: 100px;
+    text-align: center;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  .featured-post-item .entry-content
+  {
+      opacity: 0.7;
+
+  }
+
+
+ 
+.all-posts-wrapper .all-post-item {
+     display: table;
+     width: 100%;
+     margin-bottom: 30px;
+}
+
+.all-post-item:nth-child(odd) .post-content {
+     float: right;
+}
+
+.all-post-item:nth-child(odd) .post-img {
+     float: left;
+}
+
+.post-content,
+.post-img {
+     display: table-cell;
+     width: 50%;
+     vertical-align: top;
+}
+
+.post-content {
+     padding: 20px;
+}
+
+.post-img img {
+     width: 100%;
+     height: auto;
+     object-fit: cover;
+}
