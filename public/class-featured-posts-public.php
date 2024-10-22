@@ -178,6 +178,16 @@ class Featured_Posts_Public {
 				foreach ($categories as $category) {
 					$category_names[] = $category->name;
 				}
+
+				$excerpt = get_the_excerpt();
+				$excerpt = wp_strip_all_tags(strip_shortcodes($excerpt)); // Remove tags and shortcodes
+
+				// Limit the excerpt to the specified word count
+				$word_limit = 20;
+				$words = explode(' ', $excerpt);
+				if (count($words) > $word_limit) {
+					$excerpt = implode(' ', array_slice($words, 0, $word_limit)) . ' <a style="text-decoration:none;" href="' . get_the_permalink() . '"><b>Read More...</b></a>';
+				}
 				
 				$output .= '<div class="all-post-item ' . (($counter % 2 == 0) ? 'even' : 'odd') . '">
 					<div class="post-content">
@@ -192,7 +202,7 @@ class Featured_Posts_Public {
 						</header>
 
 							<div class="entry-content">
-								' . apply_filters('the_excerpt', get_the_excerpt()) . '
+								' . $excerpt . '
 							</div>
 								<footer class="entry-footer">
 								<span class="author">By '.get_the_author().'</span>
