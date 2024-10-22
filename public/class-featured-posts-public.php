@@ -173,6 +173,7 @@ class Featured_Posts_Public {
 			{ 
 				$all_posts->the_post();
 				
+				
 				$output .= '<div class="all-post-item ' . (($counter % 2 == 0) ? 'even' : 'odd') . '">
 					<div class="post-content">
 						<article id="post-' . get_the_ID() . '" ' . join(' ', get_post_class()) . '>
@@ -181,8 +182,12 @@ class Featured_Posts_Public {
 						</header>
 
 							<div class="entry-content">
-								' . get_the_excerpt() . '
+								' . apply_filters('the_excerpt', get_the_excerpt()) . '
 							</div>
+								<footer class="entry-footer">
+								<span class="author">By '.get_the_author().'</span>
+								<span class="date">'.human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago</span>
+								</footer>
 						</article>
 					</div>
 					<div class="post-image">
@@ -249,6 +254,10 @@ function fp_latest_posts($ppp = 6, $page = 1)
 						<div class="entry-content">
 							' . get_the_excerpt() . '
 						</div>
+						<footer class="entry-footer">
+								<span class="author">By '.get_the_author().'</span>
+								<span class="date">'.human_time_diff(get_the_time('U'), current_time('timestamp')) . ' ago</span>
+								</footer>
 					</article>
 				</div>
 				<div class="post-image">
