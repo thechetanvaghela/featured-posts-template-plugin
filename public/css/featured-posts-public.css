@@ -85,25 +85,30 @@
      
 }
 
-.post-content,
-.post-img {
+.all-posts-wrapper  .post-content,
+.all-posts-wrapper  .post-img {
      display: table-cell;
      width: 50%;
      vertical-align: top;
 }
 
-.post-content {
+.all-posts-wrapper  .post-content {
      padding: 20px;
      width: 70%;
 }
 
-.post-img img {
+.all-posts-wrapper  .post-img img {
      width: 100%;
      height: auto;
      object-fit: cover;
 }
 
-.post-image img 
+.all-posts-wrapper  .post-image 
+{
+     padding: 20px;
+
+}
+.all-posts-wrapper  .post-image img 
 {
      box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.3);
      border-radius: 5px;
@@ -160,6 +165,10 @@
      }
      
      .all-post-item:nth-child(odd) .post-content {
+          float: left;
+          width: 100%;
+     }
+     .all-post-item:nth-child(even) .post-content {
           float: left;
           width: 100%;
      }
