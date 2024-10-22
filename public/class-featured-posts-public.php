@@ -173,11 +173,21 @@ class Featured_Posts_Public {
 			{ 
 				$all_posts->the_post();
 				
+				$categories = get_the_category();
+				$category_names = array();
+				foreach ($categories as $category) {
+					$category_names[] = $category->name;
+				}
 				
 				$output .= '<div class="all-post-item ' . (($counter % 2 == 0) ? 'even' : 'odd') . '">
 					<div class="post-content">
 						<article id="post-' . get_the_ID() . '" ' . join(' ', get_post_class()) . '>
 							<header class="entry-header">
+							
+       							<div class="post-categories">
+       								'.implode(', ', $category_names).'
+       							</div>
+       
 							<h3><a href="'.get_the_permalink().'">' . get_the_title() . '</a></h3>
 						</header>
 
@@ -241,6 +251,12 @@ function fp_latest_posts($ppp = 6, $page = 1)
 		while ($all_posts->have_posts())
 		{ 
 			$all_posts->the_post();
+
+			$categories = get_the_category();
+			$category_names = array();
+			foreach ($categories as $category) {
+				$category_names[] = $category->name;
+			}
 			?>
 			
 			<?php
@@ -248,6 +264,9 @@ function fp_latest_posts($ppp = 6, $page = 1)
 				<div class="post-content">
 					<article id="post-' . get_the_ID() . '" ' . join(' ', get_post_class()) . '>
 						<header class="entry-header">
+								<div class="post-categories">
+       								'.implode(', ', $category_names).'
+       							</div>
 							<h3><a href="'.get_the_permalink().'">' . get_the_title() . '</a></h3>
 						</header>
 
