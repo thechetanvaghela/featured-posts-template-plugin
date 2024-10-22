@@ -4,11 +4,17 @@ var ajaxurl = frontend_ajax_object.ajaxurl;
 var load_more = true;
 var sync_call = true;
 
+if(document.getElementsByClassName('blog-loader').length > 0)
+{
+    document.getElementsByClassName('blog-loader')[0].style.visibility = 'hidden';
+}
+
 function load_posts(pageNumber) {
     var str = '&pageNumber=' + pageNumber + '&ppp=' + ppp + '&action=fp_more_post_ajax';
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
+            document.getElementsByClassName('blog-loader')[0].style.visibility = 'hidden';
             var response = JSON.parse(request.response);
             var response_html = response.html;
             load_more = response.load_more;
@@ -17,6 +23,7 @@ function load_posts(pageNumber) {
         }
         else
         {
+            document.getElementsByClassName('blog-loader')[0].style.visibility = 'visible';
             sync_call = false;
         }
     };
@@ -28,7 +35,7 @@ function load_posts(pageNumber) {
 
 document.addEventListener('scroll', function() {
     var wrap = document.getElementById('ajax-post-data');
-    var contentHeight = wrap.offsetHeight;
+    var contentHeight = wrap.offsetHeight + 200;
     var yOffset = window.pageYOffset; 
     var y = yOffset + window.innerHeight;
 

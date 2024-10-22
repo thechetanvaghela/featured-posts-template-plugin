@@ -77,9 +77,9 @@ echo fp_latest_posts($show_posts_on_scroll,1);
 echo '</div>';
 echo '</div>';
 ?>
-<!-- <div class="d-flex">
-    <div class="blog-loader mt-3 mt-md-4"></div>
-</div> -->
+<div class="blog-loader-wrapper">
+    <div class="blog-loader"></div>
+</div>
 <?php
 
 echo '</div>';

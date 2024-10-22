@@ -13,7 +13,6 @@
       width: 100%;
   }
 
-
   .featured-post-item {
     width: 48%;
     padding-right: 40px;
@@ -24,6 +23,12 @@
     text-align: center;
     color: #fff;
     height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+
   }
   .featured-post-item h2 a
   {
@@ -33,6 +38,17 @@
 
   .featured-post-item.full {
       width: 100%;
+  }
+
+  .featured-post-item article
+  {
+     width: 90%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    
   }
   .read-more-content a
   {
@@ -52,12 +68,11 @@
 
   }
 
-
- 
 .all-posts-wrapper .all-post-item {
      display: table;
      width: 100%;
      margin-bottom: 30px;
+     padding: 10px;
 }
 
 .all-post-item:nth-child(odd) .post-content {
@@ -66,6 +81,7 @@
 
 .all-post-item:nth-child(odd) .post-img {
      float: left;
+     
 }
 
 .post-content,
@@ -83,4 +99,183 @@
      width: 100%;
      height: auto;
      object-fit: cover;
+}
+
+.post-image img 
+{
+     box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.3);
+     border-radius: 5px;
+}
+
+@media screen and (max-width: 1200px) {
+     .featured-post-item {
+          width: 100%;
+          height: 100%;
+          padding: 25px;
+     }
+
+     
+  .featured-post-item article
+     {
+          width: 80%;
+     }
+}
+
+@media screen and (max-width: 1040px) {
+     .featured-post-item {
+          width: 100%;
+          height: 100%;
+          padding: 25px;
+     }
+
+     
+  .featured-post-item article
+     {
+          width: 70%;
+     }
+}
+
+@media screen and (max-width: 768px) {
+     .featured-post-item {
+          width: 100%;
+          height: 100%;
+          padding: 25px;
+     }
+
+     .all-posts-wrapper .all-post-item {
+          display: table;
+          width: 100%;
+          margin-bottom: 30px;
+          padding: 10px;
+     }
+     
+     .all-post-item:nth-child(odd) .post-content {
+          float: none;
+     }
+     
+     .all-post-item:nth-child(odd) .post-img {
+          float: none;
+     }
+
+     .featured-post-item article {
+          width: 80%;
+      }
+}
+
+
+@media screen and (max-width: 480px) {
+    
+     .featured-post-item {
+          width: 100%;
+          height: 100%;
+          padding: 25px;
+     }
+
+     .all-posts-wrapper .all-post-item {
+          display: block;
+          width: 100%;
+          margin-bottom: 30px;
+          padding: 10px;
+     }
+     
+     .all-post-item:nth-child(odd) .post-content {
+          float: none;
+     }
+     
+     .all-post-item:nth-child(odd) .post-img {
+          float: none;
+     }
+
+     .featured-post-item article {
+          width: 90%;
+      }
+}
+
+
+.blog-loader-wrapper
+{
+     display: block;
+     width: 100%;
+     text-align: center;
+     margin: 0 auto;
+}
+.blog-loader {
+     position: relative;
+     width: 20px;
+     height: 20px;
+     border-radius: 50%;
+     background-color: #666666;
+     color: #666666;
+     animation: loaderflash 1s infinite linear alternate;
+     animation-delay: .5s;
+     display: inline-block;
+     margin: 0 auto; 
+}
+ @media only screen and (max-width: 767px) 
+ {
+       .blog-loader 
+       {
+         width: 8px;
+         height: 8px; 
+     } 
+}
+
+.blog-loader:before, .blog-loader:after {
+     content: '';
+     display: inline-block;
+     position: absolute;
+     top: 0;
+     width: 20px;
+     height: 20px;
+     border-radius: 50%;
+     background-color: #666666;
+     color: #666666;
+     animation: loaderflash 1s infinite alternate; 
+}
+
+@media only screen and (max-width: 767px) 
+{
+     .blog-loader:before, .blog-loader:after 
+     {
+           width: 8px;
+           height: 8px; 
+     } 
+}
+
+.blog-loader:before 
+{
+     left: -30px;
+     animation-delay: 0s; 
+}
+
+@media only screen and (max-width: 767px) 
+{
+     .blog-loader:before 
+     {
+           left: -12px; 
+     } 
+}
+
+.blog-loader:after 
+{
+       left: 30px;
+       animation-delay: 1s; 
+}
+
+@media only screen and (max-width: 767px) 
+{
+     .blog-loader:after 
+     {
+          left: 12px; 
+     } 
+}
+
+@keyframes loaderflash 
+{
+     0% {
+       background-color: #666666; 
+     }
+     50%,100% {
+       background-color: #E9E9E9; 
+     } 
 }
