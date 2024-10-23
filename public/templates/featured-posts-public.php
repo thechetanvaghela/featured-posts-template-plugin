@@ -30,7 +30,7 @@ if ($featured_category)
             }
             ?>
            
-            <div class="featured-post-item <?php echo $counter % 3 == 0 ? 'full' : ''; ?>" <?php if (has_post_thumbnail()) : ?> style="background : linear-gradient(0deg, rgb(4 4 4 / 48%), rgb(24 21 23 / 27%)), url('<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>'); background-size: cover; background-position: center;"<?php endif; ?>>
+            <div class="featured-post-item <?php echo $counter % 3 == 0 ? 'full' : ''; ?>" <?php if (has_post_thumbnail()) { ?> style="background : linear-gradient(0deg, rgb(4 4 4 / 48%), rgb(24 21 23 / 27%)), url('<?php echo get_the_post_thumbnail_url(get_the_ID(), 'full'); ?>'); background-size: cover; background-position: center;"<?php }else { ?> style="background : linear-gradient(0deg, rgb(4 4 4 / 48%), rgb(24 21 23 / 27%)), url('<?php echo plugin_dir_url(__FILE__) . '/assets/images/placeholder.png'; ?>'); background-size: cover; background-position: center;"<?php } ?>>
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                     <header class="entry-header">
                         <?php the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>'); ?>
