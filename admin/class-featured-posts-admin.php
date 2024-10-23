@@ -111,7 +111,7 @@ class Featured_Posts_Admin {
 			'Featured Post', // Page Title
 			'Featured Post', // Menu Title
 			'manage_options', // Capability
-			'abtt-settings', // Menu Slug
+			'fpps-settings', // Menu Slug
 			array($this, 'cv_featured_posts_callback'), // Callback function
 			'dashicons-star-filled', // Icon
 			20 // Position
