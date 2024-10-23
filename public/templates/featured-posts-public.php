@@ -19,7 +19,7 @@ if ($featured_category)
     if ($featured_posts->have_posts()) 
     {
         $counter = 0;
-        echo '<div class="featured-posts-wrapper">';
+        echo '<div class="featured-posts-wrapper clearfix">';
         while ($featured_posts->have_posts())
         { 
             $featured_posts->the_post();
