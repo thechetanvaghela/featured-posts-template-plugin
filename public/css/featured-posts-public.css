@@ -13,6 +13,19 @@
       width: 100%;
   }
 
+
+   .featured-posts-wrapper
+ {
+     display: block;
+     min-height: 100%;
+ }
+
+ .clearfix::after {
+      content: "";
+      display: table;
+      clear: both;
+ }
+
   .featured-post-item {
     width: 48%;
     padding-right: 40px;
