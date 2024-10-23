@@ -211,7 +211,7 @@ class Featured_Posts_Public {
 						</article>
 					</div>
 					<div class="post-image">
-						' . (has_post_thumbnail() ? get_the_post_thumbnail(null, 'medium') : '<img src="' . plugin_dir_url(__FILE__) . '../assets/images/placeholder.png" alt="Placeholder Image" class="placeholder-image">') . '
+						' . (has_post_thumbnail() ? get_the_post_thumbnail(null, 'medium') : '<img src="' . plugin_dir_url(__FILE__) . '/assets/images/placeholder.png" alt="Placeholder Image" class="placeholder-image">') . '
 					</div>
 				</div>';
 				?>
@@ -290,7 +290,7 @@ function fp_latest_posts($ppp = 6, $page = 1)
 					</article>
 				</div>
 				<div class="post-image">
-					' . (has_post_thumbnail() ? get_the_post_thumbnail(null, 'medium') : '<img src="' . plugin_dir_url(__FILE__) . '../assets/images/placeholder.png" alt="Placeholder Image" class="placeholder-image">') . '
+					' . (has_post_thumbnail() ? get_the_post_thumbnail(null, 'medium') : '<img src="' . plugin_dir_url(__FILE__) . '/assets/images/placeholder.png" alt="Placeholder Image" class="placeholder-image">') . '
 				</div>
 			</div>';
 			?>
