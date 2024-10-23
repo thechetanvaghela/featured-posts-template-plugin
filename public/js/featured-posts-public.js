@@ -33,7 +33,7 @@ function load_posts(pageNumber) {
     request.send(str);
 };
 
-document.addEventListener('scroll', function() {
+/* document.addEventListener('scroll', function() {
     var wrap = document.getElementById('ajax-post-data');
     var contentHeight = wrap.offsetHeight + 200;
     var yOffset = window.pageYOffset; 
@@ -47,6 +47,20 @@ document.addEventListener('scroll', function() {
             {
                 pageNumber = pageNumber + 1;
                 load_posts(pageNumber);        
+            }
+        }
+    }
+}); */
+
+document.addEventListener('scroll', function() {
+    var wrap = document.getElementById('ajax-post-data');
+    var wrapBottom = wrap.offsetTop + wrap.offsetHeight;
+    var y = window.pageYOffset + window.innerHeight;
+    if (y >= wrapBottom) {
+        if (load_more === true) {
+            if (sync_call === true) {
+                pageNumber += 1;
+                load_posts(pageNumber);
             }
         }
     }
